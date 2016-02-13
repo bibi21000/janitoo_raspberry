@@ -64,12 +64,3 @@ class TestPiSerser(JNTTServer, JNTTServerCommon):
     server_class = PiServer
     server_conf = "tests/data/janitoo_raspberry.conf"
 
-    def test_110_request_system_values(self):
-        self.start()
-        try:
-            nodeHADD=HADD%(137,0)
-            self.assertHeartbeatNode(hadd=nodeHADD)
-            self.assertNodeRequest(cmd_class=COMMAND_DISCOVERY, uuid='request_info_nodes', node_hadd=nodeHADD, client_hadd=HADD%(9999,0))
-            self.assertBroadcastRequest(cmd_class=COMMAND_DISCOVERY, uuid='request_info_nodes', client_hadd=HADD%(9999,0))
-        finally:
-            self.stop()
