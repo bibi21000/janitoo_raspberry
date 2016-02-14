@@ -54,18 +54,20 @@ COMMAND_CONTROLLER = 0x1050
 assert(COMMAND_DESC[COMMAND_CONTROLLER] == 'COMMAND_CONTROLLER')
 ##############################################################
 
+OID = 'rpibasic'
+
 def make_thread(options):
-    if get_option_autostart(options, 'rpibasic') == True:
-        return CameraThread(options)
+    if get_option_autostart(options, OID) == True:
+        return RaspberryThread(options)
     else:
         return None
 
-class CameraThread(JNTBusThread):
+class RaspberryThread(JNTBusThread):
     """The basic thread
 
     """
     def init_bus(self):
         """Build the bus
         """
-        self.section = 'rpibasic'
-        self.bus = JNTBus(options=self.options, oid=self.section, product_name="Raspberry basic controller")
+        self.section = OID
+        self.bus = JNTBus(options=self.options, oid=OID, product_name="Raspberry basic controller")
