@@ -65,6 +65,7 @@ class TestPiSerser(JNTTServer, JNTTServerCommon):
     broker_password = 'toto'
     server_class = PiServer
     server_conf = "tests/data/janitoo_raspberry.conf"
+    hadds = [HADD%(138,0)]
 
     def test_040_server_start_no_error_in_log(self):
         self.onlyRasperryTest()
