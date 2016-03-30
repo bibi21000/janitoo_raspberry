@@ -14,3 +14,9 @@ Using the staff group
 - add your user (pi) to it
 - sudo chmod -Rf g+w /usr/local/lib/python2.7/
 - sudo chmod -Rf g+w /usr/local/bin
+
+Launching all tests for raspberry :
+
+..code: bash
+
+ sudo make clean >/dev/null 2>&1;sudo make tests-all >tests.log 2>&1;make coverage-all>>tests.log 2>&1
