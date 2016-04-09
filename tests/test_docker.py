@@ -55,4 +55,5 @@ class TestRaspberrySerser(JNTTDockerServer, JNTTDockerServerCommon):
     hadds = [HADD%(138,0)]
 
     def test_040_server_start_no_error_in_log(self):
+        JNTTDockerServer.onlyDockerTest()
         JNTTDockerServerCommon.minimal_040_server_start_reload_restart(self)
