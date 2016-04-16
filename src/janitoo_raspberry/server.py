@@ -68,15 +68,6 @@ class PiServer(JNTServer, JNTControllerManager):
         self.section = "raspi"
         JNTControllerManager.__init__(self)
 
-    #~ def _get_egg_path(self):
-        #~ """Return the egg path of the module. Must be redefined in server class. Used to find alembic migration scripts.
-        #~ """
-        #~ try:
-            #~ _dist = get_distribution('janitoo_pi')
-            #~ return _dist.__file__
-        #~ except AttributeError:
-            #~ return os.path.join("/opt/janitoo/src",'src-pi/config')
-
     def start(self):
         """Start the Server
         """
