@@ -95,7 +95,7 @@ setup(
     data_files = data_files,
     install_requires=[
                      'janitoo',
-                     'janitoo_factory'
+                     'janitoo_factory',
                      'ez_setup',
                     ],
     dependency_links = [
