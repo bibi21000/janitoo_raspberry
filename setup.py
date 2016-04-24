@@ -94,9 +94,9 @@ setup(
     include_package_data=True,
     data_files = data_files,
     install_requires=[
+                     'ez_setup',
                      'janitoo',
                      'janitoo_factory',
-                     'ez_setup',
                     ],
     dependency_links = [
       'https://github.com/bibi21000/janitoo/archive/master.zip#egg=janitoo',
