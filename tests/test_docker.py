@@ -41,7 +41,7 @@ from janitoo.runner import Runner, jnt_parse_args
 from janitoo.server import JNTServer
 from janitoo.utils import HADD_SEP, HADD
 
-from janitoo_raspberry.server import PiServer
+from janitoo_raspberry.server import PiCtrlServer as PiServer
 from janitoo_raspberry.thread_basic import RaspberryThread
 
 class TestRaspberrySerser(JNTTDockerServer, JNTTDockerServerCommon):

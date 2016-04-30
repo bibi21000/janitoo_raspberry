@@ -54,7 +54,7 @@ assert(COMMAND_DESC[COMMAND_CONTROLLER] == 'COMMAND_CONTROLLER')
 assert(COMMAND_DESC[COMMAND_UPDATE] == 'COMMAND_UPDATE')
 ##############################################################
 
-class PiServer(JNTServer, JNTControllerManager):
+class PiServer(JNTServer):
     """The Raspberry pi Server
 
     """
@@ -65,6 +65,15 @@ class PiServer(JNTServer, JNTControllerManager):
         if check_plateform==True and not platform.machine().startswith('armv6'):
             raise JanitooException(message='This server can be used on Raspberry Pi only')
         JNTServer.__init__(self, options)
+
+class PiCtrlServer(PiServer, JNTControllerManager):
+    """The Raspberry pi Server with a controller
+
+    """
+    def __init__(self, options, check_plateform=False):
+        """
+        """
+        PiServer.__init__(self, options, check_plateform=check_plateform)
         self.section = "raspi"
         JNTControllerManager.__init__(self)
 
