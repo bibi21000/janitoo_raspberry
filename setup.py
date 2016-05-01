@@ -97,10 +97,12 @@ setup(
                      'ez_setup',
                      'janitoo',
                      'janitoo_factory',
+                     'janitoo_factory_exts',
                     ],
     dependency_links = [
       'https://github.com/bibi21000/janitoo/archive/master.zip#egg=janitoo',
       'https://github.com/bibi21000/janitoo_factory/archive/master.zip#egg=janitoo_factory',
+      'https://github.com/bibi21000/janitoo_factory_exts/archive/master.zip#egg=janitoo_factory_exts',
     ],
     entry_points = janitoo_entry_points,
 )
