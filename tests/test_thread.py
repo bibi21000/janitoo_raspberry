@@ -57,7 +57,7 @@ assert(COMMAND_DESC[COMMAND_DISCOVERY] == 'COMMAND_DISCOVERY')
 ##############################################################
 
 class TestRaspberryThread(JNTTThreadRun, JNTTThreadRunCommon):
-    """Test the datarrd thread
+    """Test the thread
     """
     thread_name = "rpibasic"
     conf_file = "tests/data/janitoo_raspberry.conf"
