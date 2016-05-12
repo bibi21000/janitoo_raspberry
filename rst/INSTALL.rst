@@ -17,6 +17,6 @@ Using the staff group
 
 Launching all tests for raspberry :
 
-..code: bash
+.. code:: bash
 
  sudo make clean >/dev/null 2>&1;sudo make tests-all >tests.log 2>&1;make coverage-all>>tests.log 2>&1
