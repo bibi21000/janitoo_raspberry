@@ -1,0 +1,13 @@
+janitoo_raspberry package
+=========================
+
+Show janitoo's extensions.
+
+Core extensions
+---------------
+
+Threads
+^^^^^^^
+
+ - rpibasic (janitoo_raspberry.thread_basic:make_thread)
+
