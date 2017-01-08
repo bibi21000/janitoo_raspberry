@@ -1,4 +1,4 @@
-# Makefile for janitoo
+# Makefile for janitoo-raspberry
 #
 
 # You can set these variables from the command line.
@@ -54,7 +54,7 @@ TAGGED := $(shell git tag | grep -c v${janitoo_version} )
 NOSECOVER     = --cover-package=${MODULENAME} --with-coverage --cover-inclusive --cover-html --cover-html-dir=${BUILDDIR}/docs/html/tools/coverage --with-html --html-file=${BUILDDIR}/docs/html/tools/nosetests/index.html
 NOSEDOCKER     = --cover-package=${NOSEMODULES},${MODULENAME},${MOREMODULES} --with-coverage --cover-inclusive --with-xunit --xunit-testsuite-name=${MODULENAME}
 
-.PHONY: help check-tag clean all build develop install uninstall clean-doc doc certification tests pylint deps docker-tests
+.PHONY: help check-tag clean all build develop install uninstall clean-doc doc certification tests pylint deps docker-tests zram-swap
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
@@ -291,3 +291,13 @@ debch:
 
 deb:
 	dpkg-buildpackage
+
+/etc/default/zram-swap:
+	sudo cp utils/zram-swap.default /etc/default/zram-swap
+
+/etc/init.d/zram-swap:
+	sudo cp utils/zram-swap /etc/init.d/zram-swap
+	sudo chmod 755 /etc/init.d/zram-swap
+	sudo update-rc.d zram-swap defaults 02 99
+
+zram-swap: /etc/default/zram-swap /etc/init.d/zram-swap
