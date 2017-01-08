@@ -299,5 +299,6 @@ deb:
 	sudo cp utils/zram-swap /etc/init.d/zram-swap
 	sudo chmod 755 /etc/init.d/zram-swap
 	sudo update-rc.d zram-swap defaults 02 99
+	sudo systemctl disable dphys-swapfile.service
 
 zram-swap: /etc/default/zram-swap /etc/init.d/zram-swap
