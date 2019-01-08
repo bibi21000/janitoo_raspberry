@@ -1,0 +1,5 @@
+# defaults file for zram swap
+
+#CPU power management node
+#CPUMODE=powersave
+CPUMODE=conservative

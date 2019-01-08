@@ -180,3 +180,13 @@ deb:
 	sudo systemctl disable dphys-swapfile.service
 
 zram-swap: /etc/default/zram-swap /etc/init.d/zram-swap
+
+/etc/default/cpu-conservative:
+	sudo cp utils/cpu-conservative.default /etc/default/cpu-conservative
+
+/etc/init.d/cpu-conservative:
+	sudo cp utils/cpu-conservative /etc/init.d/cpu-conservative
+	sudo chmod 755 /etc/init.d/cpu-conservative
+	sudo update-rc.d cpu-conservative defaults 02 99
+
+cpu-conservative: /etc/default/cpu-conservative /etc/init.d/cpu-conservative
